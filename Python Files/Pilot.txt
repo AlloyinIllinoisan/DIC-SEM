@@ -1,9 +1,0 @@
-Main Directory: D:\HDIC_Calculation\Nickel_Based_718MicroVolume\HDIC_Calculation\AlignImages\HDIC + Translation Only\Test_RLB_2
-Number of regions: 9
-ImageJ Macros Directory: D:\Scripts\RLB\Overnight Run\ImageJ_Macros
-Batch Files Directory: D:\Scripts\RLB\Overnight Run\Batch Files
-Path to Fiji: C:\Program Files (x86)\Fiji.app
-Your Email: rlb8@illinois.edu
-GPU Workstation Email: marshawnthegpuworkstation@gmail.com
-Password: Rephayah!234
-Project Name: MicroVolume Project
