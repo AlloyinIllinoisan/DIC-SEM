@@ -14,7 +14,7 @@ import csv
 import yagmail
 
 tic = time.time()
-ScriptName = 'Batch File for ImageJ Fusion Macros'
+ScriptName = 'Batch File for Image Alignment'
 
 with open('Pilot.txt') as f:
     lines = f.readlines()
