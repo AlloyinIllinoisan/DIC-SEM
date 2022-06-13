@@ -8,19 +8,31 @@ Once both have been downloaded, please place in a location not in the directory 
 Once you have placed the "Batch Files" and "Python Scripts" folders in a directory, create another directory called "ImageJ_Macros". The folders should have addresses of "Directory/Batch Files", "Directory/Python Scripts", and "Directory/ImageJ_Macros"
 
 Go into the "Python Scripts" folder and edit the "Pilot.txt" file to assign the:
-
+_________________________________________________________________________________________________________________________________________________________________
 Main Directory: Where the main folder is that will house all of the data for your DIC project.
+
 Number of steps: This is the step number you are on. Don't use 0, but if you are on step 1, use 1, step 2, 2, etc.
+
 Image J Macros Directory: This is the directory you created "ImageJ_Macros"
+
 Batch Files Directory: This is the directory you downloaded
+
 Path to Fiji: This shouldn't be changed if using Marshawn.
+
 Your Email: If you would like emails to alert you when a step has completed, put your email in here. If you don't want emails, then either have Marshawn email itself or put cmbean2@illinois.edu
+
 GPU Workstation Email: Don't change if using Marshawn.
+
 Password: Don't change.
+
 Project Name: Change this at your leisure. It will just announce to you the project that Marshawn is working on.
+
 Grid Cols: This is the number of columns in your DIC set.
+
 Grid Rows: This is the number of rows in your DIC set.
+
 Tile Overlap: This is the percent overlap between images. This is for the ImageJ macros.
+_________________________________________________________________________________________________________________________________________________________________
 
 Once "Pilot.txt" has been edited, you may run it in the "Pilot.py" script to make sure that everything is displayed correctly. This is important, because all of the subsequent scripts read from this text file for certain inputs.
 
