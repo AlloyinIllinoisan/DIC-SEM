@@ -51,7 +51,7 @@ GridRows = lines[10][11:-1] #Number of rows in the grid
 TileOverlap = lines[11][14:-1] #Percentage of overlap between tiles
 PythonScriptsDirectory = lines[12][26:-1] #Python Scripts Directory (Good to Go)
 PythonScriptsDirectory = PythonScriptsDirectory.replace("\\","/")
-xCorrelDirectory = lines[13][17:] #Path to xCorrel
+xCorrelDirectory = lines[13][17:-1] #Path to xCorrel
 # xCorrelDirectory = xCorrelDirectory.replace("\\","/")
 # Folder Path
 path = MainDirectory
