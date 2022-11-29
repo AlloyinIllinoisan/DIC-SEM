@@ -23,7 +23,7 @@ with open('Pilot.txt') as f:
     
 MainDirectory = lines[0][16:-1] #Main Folder
 MainDirectory = MainDirectory.replace("\\","/")
-v = lines[1][-2] #Number of Regions (defunct)
+n = lines[1][-2] #Number of Steps
 ImageJMacrosDirectory = lines[2][25:-1] #Folder Containing the ImageJ Macros
 ImageJMacrosDirectory = ImageJMacrosDirectory.replace("\\","/")
 BatchFileMacrosDirectory = lines[3][23:-1] #Folder Containing the Batch Files
@@ -36,6 +36,8 @@ ProjectName = lines[8][14:-1] #Name of the current project
 GridCols = lines[9][11:-1] #Number of columns in the grid
 GridRows = lines[10][11:-1] #Number of rows in the grid
 TileOverlap = lines[11][14:-1] #Percentage of overlap between tiles
+PythonScriptsDirectory = lines[12][26:-1] #Python Scripts Directory (Good to Go)
+xCorrelDirectory = lines[13][17:] #Path to xCorrel
 directory = MainDirectory
 path = ImageJMacrosDirectory
 
