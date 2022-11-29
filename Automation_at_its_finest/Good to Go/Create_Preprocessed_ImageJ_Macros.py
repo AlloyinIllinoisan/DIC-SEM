@@ -36,7 +36,8 @@ GridCols = lines[9][11:-1] #Number of columns in the grid
 GridRows = lines[10][11:-1] #Number of rows in the grid
 TileOverlap = lines[11][14:-1] #Percentage of overlap between tiles
 PythonScriptsDirectory = lines[12][26:-1] #Python Scripts Directory (Good to Go)
-xCorrelDirectory = lines[13][17:] #Path to xCorrel
+PythonScriptsDirectory = PythonScriptsDirectory.replace("\\","/")
+xCorrelDirectory = lines[13][17:-1] #Path to xCorrel
 directory = MainDirectory
 path = ImageJMacrosDirectory
 
