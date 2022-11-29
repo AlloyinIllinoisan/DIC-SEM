@@ -52,6 +52,7 @@ TileOverlap = lines[11][14:-1] #Percentage of overlap between tiles
 PythonScriptsDirectory = lines[12][26:-1] #Python Scripts Directory (Good to Go)
 PythonScriptsDirectory = PythonScriptsDirectory.replace("\\","/")
 xCorrelDirectory = lines[13][17:] #Path to xCorrel
+# xCorrelDirectory = xCorrelDirectory.replace("\\","/")
 # Folder Path
 path = MainDirectory
 
@@ -75,7 +76,7 @@ Idaho = pd.DataFrame(Jeepers)
 Oregon = pd.DataFrame(nplemon)
 California = pd.concat([Idaho,Oregon])
 
-California.to_csv(xCorrelDirectory+'/Finished_Batch.bat', index=False, header=False, sep='\t', quoting=csv.QUOTE_NONE, escapechar = '\t')
+California.to_csv(xCorrelDirectory+'/XCorrel_Finished.bat', index=False, header=False, sep='\t', quoting=csv.QUOTE_NONE, escapechar = '\t')
 
 # yag = yagmail.SMTP('{}'.format(WorkStationEmail), '{}'.format(Password))
 
