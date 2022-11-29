@@ -1,11 +1,9 @@
 # DIC-SEM
 Processes DIC/SEM Data
 
-Please download both the "Batch Files" and "Python Scripts" folders.
+Go to the <>Code button and download the zip folder.
 
 Once both have been downloaded, please place in a location not in the directory you are running the DIC calculations on.
-
-Once you have placed the "Batch Files" and "Python Scripts" folders in a directory, create another directory called "ImageJ_Macros". The folders should have addresses of "Directory/Batch Files", "Directory/Python Scripts", and "Directory/ImageJ_Macros"
 
 Go into the "Python Scripts" folder and edit the "Pilot.txt" file to assign the:
 _________________________________________________________________________________________________________________________________________________________________
@@ -32,11 +30,15 @@ Grid Cols: This is the number of columns in your DIC set.
 Grid Rows: This is the number of rows in your DIC set.
 
 Tile Overlap: This is the percent overlap between images. This is for the ImageJ macros.
+
+Python Scripts Directory: The directory that the Pilot.txt and Python scripts are in.
 _________________________________________________________________________________________________________________________________________________________________
+
+CAUTION!!! THE PILOT TEXT FILE IS SPECIFIC DOWN TO THE SPACE, SO REPLACE THE NUMBER, ADDRESS, ETC. WITHOUT ADDING OR REMOVING SPACES.
 
 Once "Pilot.txt" has been edited, you may run it in the "Pilot.py" script to make sure that everything is displayed correctly. This is important, because all of the subsequent scripts read from this text file for certain inputs.
 
-After you are satisfied with the Pilot.txt file, you may continue to the next step. If something is not displaying correctly in the "Pilot.py" variable explorer, you must change it and then enter every single Python script in the "Python Scripts" folder in order to make sure no mistakes occur.
+After you are satisfied with the Pilot.txt file, you may continue to the next step. If something is not displaying correctly in the "Pilot.py" variable explorer, you must change it and then enter every single Python script in the "Good to Go" folder in order to make sure no mistakes occur.
 
 _Note: # means an arbitrary number that is the step number_
 
@@ -57,6 +59,8 @@ This will create a file in C://xCorrel, so you will need to go there and double-
 Once completed, you need to get back on Marshawn and go to your "Batch Files" folder again. Go to the batch file "Double_Click_Me.bat" and double-click it. It is a difficult instruction, but I have complete confidence in your abilities.
 
 This will automatically sort all your files by extension, generate tiffs for .BlN, .LRt, .GrX, .BlA, .DpX, and .DpY files, as well as stitch and display the resulting images. The .LRt, .GrX, and .BlA will also have a Gaussian blur applied.
+
+After all of this is completed, you will receive an email informing you that your data is ready for your viewing pleasure.
 
 You can be emailed at every step, if you so choose.
 
