@@ -32,6 +32,10 @@ Grid Rows: This is the number of rows in your DIC set.
 Tile Overlap: This is the percent overlap between images. This is for the ImageJ macros.
 
 Python Scripts Directory: The directory that the Pilot.txt and Python scripts are in.
+
+xCorrel Directory: The path to xCorrel.
+
+END (DO NOT DELETE THIS)
 _________________________________________________________________________________________________________________________________________________________________
 
 CAUTION!!! THE PILOT TEXT FILE IS SPECIFIC DOWN TO THE SPACE, SO REPLACE THE NUMBER, ADDRESS, ETC. WITHOUT ADDING OR REMOVING SPACES.
@@ -52,13 +56,13 @@ Once saved, open a random image from the most recent step in ImageJ and select a
 
 Run XCorrel and quit right after. You only need the ima.PAR file to save the parameters.
 
-Open the ima.PAR file in Notepad and then open "Create IMA_PAR files.py". Write in the appropriate step number into line 65, then tiput the values from ima.PAR into the labelled section (lines 72-78), and change anything else that indicates it should be changed. Run this once all necessary changes have been made.
+Open the ima.PAR file in Notepad and then open "Create IMA_PAR files.py". Write in the appropriate step number into line 68, then tiput the values from ima.PAR into the labelled section (lines 75-81), and change anything else that indicates it should be changed. Run this once all necessary changes have been made.
 
-Then open "XCorrel_Batch_File_Generator.py" in the "Good to Go" folder. You need to change line 48 to be a representative name for your project, and put in the relevant step number. Line 55 needs to have the correct Aligned Images Directory address put in so it reads "f.write("start /wait XCorrel_V9.11a.exe (Insert Aligned Image Directory address here)\\IMAFile_p%s_%s.ima\n" % (i,j))" and you need to remember that the "\" in the address needs to be a "\\" when put into Python. Don't ask me why, I just work here.
+Then open "XCorrel_Batch_File_Generator.py" in the "Good to Go" folder. You need to change line 51 to be a representative name for your project, and put in the relevant step number. Line 58 needs to have the correct Aligned Images Directory address put in so it reads "f.write("start /wait XCorrel_V9.11a.exe (Insert Aligned Image Directory address here)\\IMAFile_p%s_%s.ima\n" % (i,j))" and you need to remember that the "\" in the address needs to be a "\\" when put into Python. Don't ask me why, I just work here.
 
 This will create a file in C://xCorrel, so you will need to go there and double-click on your batch file there. It will run every image in your "AlignedImages_step#" directory.
 
-Once completed, you need to get back on Marshawn and go to your "Batch Files" folder again. Go to the batch file "Double_Click_Me.bat" and double-click it. It is a difficult instruction, but I have complete confidence in your abilities.
+Once completed, you will receive an email from Marshawn, and then you need to get back on Marshawn and go to your "Batch Files" folder again. Go to the batch file "Double_Click_Me.bat" and double-click it. It is a difficult instruction, but I have complete confidence in your abilities.
 
 This will automatically sort all your files by extension, generate tiffs for .BlN, .LRt, .GrX, .BlA, .DpX, and .DpY files, as well as stitch and display the resulting images. The .LRt, .GrX, and .BlA will also have a Gaussian blur applied.
 
