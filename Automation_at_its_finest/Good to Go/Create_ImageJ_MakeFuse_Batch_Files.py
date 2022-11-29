@@ -39,7 +39,7 @@ xCorrelDirectory = lines[13][17:-1] #Path to xCorrel
 directory = MainDirectory
 path = ImageJMacrosDirectory
 
-n = int(v) #Number of regions
+n = int(n) #Number of regions
 
 
 # Folder Path
