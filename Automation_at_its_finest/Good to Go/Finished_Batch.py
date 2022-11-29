@@ -36,21 +36,23 @@ with open('Pilot.txt') as f:
     
 MainDirectory = lines[0][16:-1] #Main Folder
 MainDirectory = MainDirectory.replace("\\","/")
-n = lines[1][-2]
-ImageJMacrosDirectory = lines[2][25:-1] #Directory to ImageJ Macros
+n = lines[1][-2] #Number of Steps
+ImageJMacrosDirectory = lines[2][25:-1] #Folder Containing the ImageJ Macros
 ImageJMacrosDirectory = ImageJMacrosDirectory.replace("\\","/")
-BatchFileMacrosDirectory = lines[3][23:-1] #Directory to Batch File Macros
+BatchFileMacrosDirectory = lines[3][23:-1] #Folder Containing the Batch Files
 BatchFileMacrosDirectory = BatchFileMacrosDirectory.replace("\\","/")
-PathtoFiji = lines[4][14:-1] #Path to ImageJ
+PathtoFiji = lines[4][14:-1] #Path to ImageJ Fiji
 SendToEmail = lines[5][12:-1] #Your email
-WorkStationEmail = lines[6][23:-1] #Marshawn's email
-Password = lines[7][10:-1] #Password to Marshawn's email
-ProjectName = lines[8][14:-1] #Name of the project
-GridCols = lines[9][11:-1] #Number of columns in grid
-GridRows = lines[10][11:-1] #Number of rows in grid
+WorkStationEmail = lines[6][23:-1] #Marshawn's Email
+Password = lines[7][10:-1] #Password for Marshawn to get to his email
+ProjectName = lines[8][14:-1] #Name of the current project
+GridCols = lines[9][11:-1] #Number of columns in the grid
+GridRows = lines[10][11:-1] #Number of rows in the grid
 TileOverlap = lines[11][14:-1] #Percentage of overlap between tiles
-PythonScriptsDirectory = lines[12][26:] #Directory of the Aligned Images
-# PythonScriptsDirectory = PythonScriptsDirectory.replace("\\","/")
+PythonScriptsDirectory = lines[12][26:-1] #Python Scripts Directory (Good to Go)
+PythonScriptsDirectory = PythonScriptsDirectory.replace("\\","/")
+xCorrelDirectory = lines[13][17:] #Path to xCorrel
+# xCorrelDirectory = xCorrelDirectory.replace("\\","/")
 # Folder Path
 path = MainDirectory
 
