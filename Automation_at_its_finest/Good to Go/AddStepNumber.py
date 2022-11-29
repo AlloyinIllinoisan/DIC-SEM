@@ -48,7 +48,7 @@ with open('Pilot.txt') as f:
     
 MainDirectory = lines[0][16:-1] #Main Folder
 MainDirectory = MainDirectory.replace("\\","/")
-n = lines[1][-2] #Number of Steps
+q = lines[1][-2] #Number of Steps
 ImageJMacrosDirectory = lines[2][25:-1] #Folder Containing the ImageJ Macros
 ImageJMacrosDirectory = ImageJMacrosDirectory.replace("\\","/")
 BatchFileMacrosDirectory = lines[3][23:-1] #Folder Containing the Batch Files
@@ -67,7 +67,7 @@ xCorrelDirectory = lines[13][17:-1] #Path to xCorrel
 directory = MainDirectory
 path = ImageJMacrosDirectory
 
-v = int(v)
+v = int(q)
 
 newpathstep0 = directory + '/step0'
 newpathstep1 = directory + '/step1'
