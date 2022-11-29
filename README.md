@@ -5,7 +5,7 @@ Go to the <>Code button and download the zip folder.
 
 Once both have been downloaded, please place in a location not in the directory you are running the DIC calculations on.
 
-Go into the "Python Scripts" folder and edit the "Pilot.txt" file to assign the:
+Go into the "Good to Go" folder and edit the "Pilot.txt" file to assign the:
 _________________________________________________________________________________________________________________________________________________________________
 Main Directory: Where the main folder is that will house all of the data for your DIC project.
 
