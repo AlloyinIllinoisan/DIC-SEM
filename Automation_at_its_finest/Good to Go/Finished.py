@@ -34,7 +34,7 @@ TileOverlap = lines[11][14:-1] #Percentage of overlap between tiles
 
 yag = yagmail.SMTP('{}'.format(WorkStationEmail), '{}'.format(Password))
 
-contents = ['{} Completed'.format(ScriptName)]
+contents = ['{}'.format(ScriptName)]
 
 yag.send('{}'.format(SendToEmail), '{}'.format(ProjectName), contents)
     
