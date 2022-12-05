@@ -58,7 +58,7 @@ Run XCorrel and quit right after. You only need the ima.PAR file to save the par
 
 Open the ima.PAR file in Notepad and then open "Create IMA_PAR files.py". Write in the appropriate step number into line 68, then tiput the values from ima.PAR into the labelled section (lines 75-81), and change anything else that indicates it should be changed. Run this once all necessary changes have been made.
 
-Then open "XCorrel_Batch_File_Generator.py" in the "Good to Go" folder. You need to change line 51 to be a representative name for your project, and put in the relevant step number. Line 58 needs to have the correct Aligned Images Directory address put in so it reads "f.write("start /wait XCorrel_V9.11a.exe (Insert Aligned Image Directory address here)\\IMAFile_p%s_%s.ima\n" % (i,j))" and you need to remember that the "\" in the address needs to be a "\\" when put into Python. Don't ask me why, I just work here.
+Then open "XCorrel_Batch_File_Generator.py" in the "Good to Go" folder. You need to change line 51 to be a representative name for your project, and put in the relevant step number. Line 58 needs to have the correct Aligned Images Directory address put in so it reads "f.write("start /wait XCorrel_V9.11a.exe (Insert Aligned Image Directory address here)\\IMAFile_p%s_%s.ima\n" % (i,j))" and you need to remember that the "\" in the address needs to be a "\\" when put into Python. Don't ask me why, I just work here. In line 60 you will need to paste the name of the batch file "XCorrel_Finished_(Your Project Name).bat" from the xCorrel directory so you get a notification when the DIC has completed. 
 
 After making the .PAR and .ima files, close Spyder. You will get an error when running Double_Click_Me.bat otherwise.
 
