@@ -75,7 +75,7 @@ Idaho = pd.DataFrame(Jeepers)
 Oregon = pd.DataFrame(nplemon)
 California = pd.concat([Idaho,Oregon])
 
-California.to_csv(xCorrelDirectory+'/XCorrel_Finished.bat', index=False, header=False, sep='\t', quoting=csv.QUOTE_NONE, escapechar = '\t')
+California.to_csv(BatchFileMacrosDirectory+'/XCorrel_Finished.bat', index=False, header=False, sep='\t', quoting=csv.QUOTE_NONE, escapechar = '\t')
 
 # yag = yagmail.SMTP('{}'.format(WorkStationEmail), '{}'.format(Password))
 
@@ -86,3 +86,4 @@ California.to_csv(xCorrelDirectory+'/XCorrel_Finished.bat', index=False, header=
 toc = time.time()
 
 print(toc-tic, 'seconds elapsed')
+
