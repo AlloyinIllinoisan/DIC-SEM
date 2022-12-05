@@ -3,10 +3,10 @@ Number of steps: 1
 ImageJ Macros Directory: E:\2023_AMITEX_718_3D\Automation_at_its_finest\ImageJ_Macros
 Batch Files Directory: E:\2023_AMITEX_718_3D\Automation_at_its_finest\Batch Files
 Path to Fiji: C:\Program Files (x86)\Fiji.app
-Your Email: cmbean2@illinois.edu
+Your Email: name@illinois.edu
 GPU Workstation Email: marshawnthegpuworkstation@gmail.com
 Password: yxuthfglzighgsvn
-Project Name: AMITEX_718_3D
+Project Name: Project
 Grid Cols: 5
 Grid Rows: 8
 Tile Overlap: 10
