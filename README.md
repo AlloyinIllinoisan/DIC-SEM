@@ -17,7 +17,7 @@ Batch Files Directory: This is the directory you downloaded
 
 Path to Fiji: This shouldn't be changed if using Marshawn.
 
-Your Email: If you would like emails to alert you when a step has completed, put your email in here and activate it in the specific files you wish by uncommenting the three lines above the "toc" function. If you don't want emails, then either have Marshawn email itself or put cmbean2@illinois.edu.
+Your Email: If you would like emails to alert you when a step has completed, put your email in here and activate it in the specific files you wish by uncommenting the three lines above the "toc" function. If you don't want emails, then either have Marshawn email itself.
 
 GPU Workstation Email: Don't change if using Marshawn.
 
