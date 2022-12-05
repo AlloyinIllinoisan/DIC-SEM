@@ -60,6 +60,8 @@ Open the ima.PAR file in Notepad and then open "Create IMA_PAR files.py". Write 
 
 Then open "XCorrel_Batch_File_Generator.py" in the "Good to Go" folder. You need to change line 51 to be a representative name for your project, and put in the relevant step number. Line 58 needs to have the correct Aligned Images Directory address put in so it reads "f.write("start /wait XCorrel_V9.11a.exe (Insert Aligned Image Directory address here)\\IMAFile_p%s_%s.ima\n" % (i,j))" and you need to remember that the "\" in the address needs to be a "\\" when put into Python. Don't ask me why, I just work here.
 
+After making the .PAR and .ima files, close Spyder. You will get an error when running Double_Click_Me.bat otherwise.
+
 This will create a file in C://xCorrel, so you will need to go there and double-click on your batch file there. It will run every image in your "AlignedImages_step#" directory.
 
 Once completed, you will receive an email from Marshawn, and then you need to get back on Marshawn and go to your "Batch Files" folder again. Go to the batch file "Double_Click_Me.bat" and double-click it. It is a difficult instruction, but I have complete confidence in your abilities.
