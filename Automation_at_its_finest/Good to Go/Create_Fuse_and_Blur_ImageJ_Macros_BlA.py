@@ -90,7 +90,7 @@ selectWindow("step{}_{}.BlA_crop.tif");'''.format(directory,j,j,z[i],j,z[i])
     L22 = 'run("Enhance Contrast", "saturated=0.35");'
     L23 = 'run("Enhance Contrast", "saturated=0.35");'
     L24 = 'run("Enhance Contrast", "saturated=0.35");'
-    L25 = 'makeRectangle(20, 18, 2008, 1328);'
+    L25 = 'makeRectangle(28, 28, 1310, 1310);'
     L26 = 'run("Crop");'
     L27 = 'run("Image Sequence... ", "select=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/BlA/Cropped/] dir=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/BlA/Cropped] format=TIFF use");'
     L28 = 'run("Image Sequence... ", "select=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/BlA/Cropped/] dir=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/BlA/Cropped] format=TIFF use");'
