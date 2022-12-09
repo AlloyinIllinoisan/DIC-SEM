@@ -89,7 +89,7 @@ selectWindow("step{}_{}.BlN_crop.tif");'''.format(directory,j,j,z[i],j,z[i])
     L22 = 'run("Enhance Contrast", "saturated=0.35");'
     L23 = 'run("Enhance Contrast", "saturated=0.35");'
     L24 = 'run("Enhance Contrast", "saturated=0.35");'
-    L25 = 'makeRectangle(28, 28, 1310, 1310);'
+    L25 = 'makeRectangle(21, 21, 2007, 1325);'
     L26 = 'run("Crop");'
     L27 ='run("Image Sequence... ", "select=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/BlN/Cropped/] dir=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/BlN/Cropped/] format=TIFF use");'
     L28 = 'run("Grid/Collection stitching", "type=[Positions from file] order=[Defined by TileConfiguration] directory=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/BlN/Cropped/] layout_file=Postprocessed_BlN_'+'step{}'.format(j)+'.txt fusion_method=[Linear Blending] regression_threshold=0.30 max/avg_displacement_threshold=2.50 absolute_displacement_threshold=3.50 computation_parameters=[Save memory (but be slower)] image_output=[Fuse and display]");'
