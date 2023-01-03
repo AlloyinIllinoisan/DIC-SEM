@@ -124,7 +124,7 @@ open("{}/step{}/step{}_{}.tif");'''.format(directory,z[i],directory,j,j,z[i])
         L5 = 'makeRectangle(2000, 1152, 2136, 1692);'
         L6 = 'run("Align slices in stack...", "method=5 windowsizex=2136 windowsizey=1692 x0=2000 y0=1152 swindow=0 subpixel=false itpmethod=0 ref.slice=1 show=true");'
         L7 = 'run("Image Sequence... ", "dir='+"{}".format(directory)+'/AlignedImages_step{}/ format=TIFF use");'.format(j)
-        L8 = 'run("Close");'
+        L8 = 'wait(6000);run("Close");wait(6000);'
         
 
         L.append(L1)
