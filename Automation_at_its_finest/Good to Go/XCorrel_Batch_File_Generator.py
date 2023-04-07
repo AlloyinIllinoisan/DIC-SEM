@@ -55,7 +55,7 @@ f.write("echo start calcul\n")
 f.write("pause\n")
 for i in range(1,b+1):
     for j in range(1,n+1):
-        f.write("start /wait XCorrel_V9.11a.exe E:\\2023_AMITEX_718_3D\\DIC_Calculation\\Raw_Images\\AlignedImages_step1\\IMAFile_p%s_%s.ima\n" % (i,j))
+        f.write("start /wait XCorrel_V9.20b.exe E:\\2023_AMITEX_718_3D\\DIC_Calculation\\Raw_Images\\AlignedImages_step1\\IMAFile_p%s_%s.ima\n" % (i,j))
     print('file done')
 f.write("call XCorrel_Finished.bat")
 f.close()
