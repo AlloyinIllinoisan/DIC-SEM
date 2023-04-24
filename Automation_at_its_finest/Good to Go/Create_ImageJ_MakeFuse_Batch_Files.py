@@ -10,7 +10,7 @@ import pandas as pd
 import tkinter as tk
 import time
 import csv
-#import yagmail
+# import yagmail
 
 tic = time.time()
 ScriptName = 'Batch File for ImageJ Fusion Macros'
@@ -100,7 +100,7 @@ strawberryConcat.to_csv('{}'.format(BatchFileMacrosDirectory)+'/ImageJ_Fusion_Gr
 avocado = []
 for m in range(n,n+1):
     L7 = 'START "My Program" /D "'+'{}'.format(PathtoFiji)+'" ImageJ-win64.exe -macro "'+'{}'.format(path)+'/MakeFuseGrXNoBlur_'+'step{}'.format(m)+'.ijm"\nTIMEOUT /T 75'
-    strawberry.append(L7)
+    avocado.append(L7)
 
 npL7 = np.array(L7)
 npavocado = np.array(avocado)
