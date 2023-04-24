@@ -12,7 +12,7 @@ import re
 import smtplib
 import time
 import ssl
-import yagmail
+# import yagmail
 
 tic = time.time()
 ScriptName = 'Macros for BlN Fusion in ImageJ'
@@ -47,15 +47,16 @@ n = int(GridCols)
 b = int(GridRows)
 
 newpath = directory + '/AlignedImages_step{}'.format(v)
+newpath = newpath.replace("/","\\")
 
-f = open("C:\\xCorrel\\AMITEX718_step1.bat", "w+") #Change the Name and the directory below
+f = open("C:\\xCorrel\\%s_step%s.bat" % (ProjectName,v), "w+") #Change the Name and the directory below
 f.write("echo off\n")
 f.write("title calculation HDIC\n")
 f.write("echo start calcul\n")
 f.write("pause\n")
 for i in range(1,b+1):
     for j in range(1,n+1):
-        f.write("start /wait XCorrel_V9.20b.exe E:\\2023_AMITEX_718_3D\\DIC_Calculation\\Raw_Images\\AlignedImages_step1\\IMAFile_p%s_%s.ima\n" % (i,j))
+        f.write("start /wait XCorrel_V9.20b.exe %s\\IMAFile_p%s_%s.ima\n" % (newpath,i,j))
     print('file done')
-f.write("call XCorrel_Finished.bat")
+f.write("call XCorrel_Finished_%s_Test.bat" % (ProjectName))
 f.close()
