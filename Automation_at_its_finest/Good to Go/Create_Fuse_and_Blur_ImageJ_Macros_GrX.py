@@ -13,7 +13,7 @@ import re
 import smtplib
 import time
 import ssl
-import yagmail
+# import yagmail
 
 tic = time.time()
 ScriptName = 'Macros for GrX Fusion in ImageJ'
@@ -95,11 +95,11 @@ selectWindow("step{}_{}.GrX_crop.tif");'''.format(directory,j,j,z[i],j,z[i])
     L27 = 'run("Image Sequence... ", "select=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/GrX/Cropped/] dir=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/GrX/Cropped] format=TIFF use");'
     L28 = 'run("Image Sequence... ", "select=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/GrX/Cropped/] dir=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/GrX/Cropped] format=TIFF use");'
     L29 = 'run("Grid/Collection stitching", "type=[Positions from file] order=[Defined by TileConfiguration] directory=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/GrX/Cropped] layout_file=Postprocessed_GrX_'+'step{}'.format(j)+'.txt fusion_method=[Linear Blending] regression_threshold=0.30 max/avg_displacement_threshold=2.50 absolute_displacement_threshold=3.50 display_fusion computation_parameters=[Save memory (but be slower)] image_output=[Fuse and display]");'
-    L30 = 'run("Gaussian Blur...", "sigma=4");'
+    L30 = 'run("Gaussian Blur...", "sigma=3");'
     L31 = '//run("Brightness/Contrast...");'
     L32 = 'run("Enhance Contrast", "saturated=0.35");'
     L33 = 'run("Enhance Contrast", "saturated=0.35");'
-    L34 = 'saveAs("Tiff", "'+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/GrX/Cropped/Fused_GrX_'+'step{}'.format(j)+'.tif");'
+    L34 = 'saveAs("Tiff", "'+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/GrX/Cropped/Fused_GrX_'+'step{}'.format(j)+'_3pxGB.tif");'
     L35 = 'close();'
     L36 = 'selectWindow("Stack");'
     L37 = 'close();'
@@ -125,7 +125,55 @@ selectWindow("step{}_{}.GrX_crop.tif");'''.format(directory,j,j,z[i],j,z[i])
     Mercury = np.array(L2, dtype = object)
     Venus = pd.Series(Mercury)
     Earth = pd.DataFrame(Venus).replace('  ',' ')
-    Earth.to_csv(path+'/MakeFuseGrX_'+'step{}'.format(j)+'.ijm', float_format=None, index=False, mode ='w', header=False, sep='\t', quoting=csv.QUOTE_NONE, escapechar = '\t')
+    Earth.to_csv(path+'/MakeFuseGrX3px_'+'step{}'.format(j)+'.ijm', float_format=None, index=False, mode ='w', header=False, sep='\t', quoting=csv.QUOTE_NONE, escapechar = '\t')
+
+L3 = []
+for j in range(v,v+1):
+    for i in range(len(z)):
+        L1 = '''open("{}/AlignedImages_step{}/GrX/step{}_{}.GrX_crop.tif");
+selectWindow("step{}_{}.GrX_crop.tif");'''.format(directory,j,j,z[i],j,z[i])
+        L3.append(L1)
+    L19 = 'run("Images to Stack", "name=Stack title=[] use");' #Giving Error in Batch
+    L20 = '//run("Brightness/Contrast...");'
+    L21 = 'run("Enhance Contrast", "saturated=0.35");'
+    L22 = 'run("Enhance Contrast", "saturated=0.35");'
+    L23 = 'run("Enhance Contrast", "saturated=0.35");'
+    L24 = 'run("Enhance Contrast", "saturated=0.35");'
+    L25 = 'makeRectangle(21, 21, 2007, 1325);'
+    L26 = 'run("Crop");'
+    L27 = 'run("Image Sequence... ", "select=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/GrX/Cropped/] dir=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/GrX/Cropped] format=TIFF use");'
+    L28 = 'run("Image Sequence... ", "select=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/GrX/Cropped/] dir=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/GrX/Cropped] format=TIFF use");'
+    L29 = 'run("Grid/Collection stitching", "type=[Positions from file] order=[Defined by TileConfiguration] directory=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/GrX/Cropped] layout_file=Postprocessed_GrX_'+'step{}'.format(j)+'.txt fusion_method=[Linear Blending] regression_threshold=0.30 max/avg_displacement_threshold=2.50 absolute_displacement_threshold=3.50 display_fusion computation_parameters=[Save memory (but be slower)] image_output=[Fuse and display]");'
+    L31 = '//run("Brightness/Contrast...");'
+    L32 = 'run("Enhance Contrast", "saturated=0.35");'
+    L33 = 'run("Enhance Contrast", "saturated=0.35");'
+    L34 = 'saveAs("Tiff", "'+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/GrX/Cropped/Fused_GrX_'+'step{}'.format(j)+'_NoBlur.tif");'
+    L35 = 'close();'
+    L36 = 'selectWindow("Stack");'
+    L37 = 'close();'
+    L3.append(L19)
+    L3.append(L20)
+    L3.append(L21)
+    L3.append(L22)
+    L3.append(L23)
+    L3.append(L24)
+    L3.append(L25)
+    L3.append(L26)
+    L3.append(L27)
+    L3.append(L28)
+    L3.append(L29)
+    L3.append(L31)
+    L3.append(L32)
+    L3.append(L33)
+    L3.append(L34)
+    L3.append(L35)
+    L3.append(L36)
+    L3.append(L37)
+    Roswell = np.array(L3, dtype = object)
+    Carlsbad = pd.Series(Roswell)
+    Belen = pd.DataFrame(Carlsbad).replace('  ',' ')
+    Belen.to_csv(path+'/MakeFuseGrXNoBlur_'+'step{}'.format(j)+'.ijm', float_format=None, index=False, mode ='w', header=False, sep='\t', quoting=csv.QUOTE_NONE, escapechar = '\t')
+    
 
 # yag = yagmail.SMTP('{}'.format(WorkStationEmail), '{}'.format(Password))
 
