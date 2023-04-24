@@ -56,20 +56,20 @@ Once saved, open a random image from the most recent step in ImageJ and select a
 
 Run XCorrel and quit right after. You only need the ima.PAR file to save the parameters.
 
-Open the ima.PAR file in Notepad and then open "Create IMA_PAR files.py". Write in the appropriate step number into line 68, then tiput the values from ima.PAR into the labelled section (lines 75-81), and change anything else that indicates it should be changed. Run this once all necessary changes have been made.
-
-Then open "XCorrel_Batch_File_Generator.py" in the "Good to Go" folder. You need to change line 51 to be a representative name for your project, and put in the relevant step number. Line 58 needs to have the correct Aligned Images Directory address put in so it reads "f.write("start /wait XCorrel_V9.11a.exe (Insert Aligned Image Directory address here)\\IMAFile_p%s_%s.ima\n" % (i,j))" and you need to remember that the "\" in the address needs to be a "\\" when put into Python. Don't ask me why, I just work here. In line 60 you will need to paste the name of the batch file "XCorrel_Finished_(Your Project Name).bat" from the xCorrel directory so you get a notification when the DIC has completed. 
+Open the ima.PAR file in Notepad and then open "Create IMA_PAR files.py". You no longer need to change the value in line 68. Input the values from ima.PAR into the labelled section (lines 75-81), and change anything else that indicates it should be changed. Run this once all necessary changes have been made.
 
 After making the .PAR and .ima files, close Spyder. You will get an error when running Double_Click_Me.bat otherwise.
+
+You no longer have to adjust the XCorrel_Batch_File_Generator.py file. You will see a batch file appear in the C://XCorrel folder that is consistent with the parameters you placed in the Pilot.txt file. The XCorrel .bat file will be named after your ProjectName and the step number.
 
 This will create a file in C://xCorrel, so you will need to go there and double-click on your batch file there. It will run every image in your "AlignedImages_step#" directory.
 
 Once completed, you will receive an email from Marshawn, and then you need to get back on Marshawn and go to your "Batch Files" folder again. Go to the batch file "Double_Click_Me.bat" and double-click it. It is a difficult instruction, but I have complete confidence in your abilities.
 
-This will automatically sort all your files by extension, generate tiffs for .BlN, .LRt, .GrX, .BlA, .DpX, and .DpY files, as well as stitch and display the resulting images. The .LRt, .GrX, and .BlA will also have a Gaussian blur applied.
+This will automatically sort all your files by extension, generate tiffs for .BlN, .LRt, .GrX, .BlA, .DpX, .DpY, .BlL, .BlT, and/or .Tws files, as well as stitch and display the resulting images. The .LRt and .GrX will also have a Gaussian blur applied. There will also be an unblurred .GrX image.
 
 After all of this is completed, you will receive an email informing you that your data is ready for your viewing pleasure.
 
 You can be emailed at every step, if you so choose.
 
-Once done, then you can go into the .BlN, .LRt, .GrX, .BlA, .DpX, and/or .DpY folders and into the "Cropped" folder within each to view the fused image.
+Once done, then you can go into the .BlN, .LRt, .GrX, .BlA, .DpX, .DpY, .BlL, .BlT, and/or .Tws folders and into the "Cropped" folder within each to view the fused image.
