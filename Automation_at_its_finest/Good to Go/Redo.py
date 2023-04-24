@@ -70,7 +70,7 @@ if not os.path.exists(recalculationdirectory):
     os.makedirs(recalculationdirectory)
 stepnumber = filestoredo[0][-22:-21]
 # yes = '{}'.format(a[0])
-ext = ('BlN', 'GrX', 'LRt', 'BlA', 'DpX', 'DpY', 'BlL', 'BlT','ima','tif','PAR')
+ext = ('BlN', 'GrX', 'LRt', 'BlA', 'DpX', 'DpY', 'BlL', 'BlT','ima','tif','PAR','Tws')
 grxdirectory = directory+'/'+ext[1]
 blndirectory = directory+'/'+ext[0]
 lrtdirectory = directory+'/'+ext[2]
@@ -81,6 +81,7 @@ blldirectory = directory+'/'+ext[6]
 bltdirectory = directory+'/'+ext[7]
 tifdirectory = directory+'/'+ext[9]
 pardirectory = directory+'/'+ext[10]
+twsdirectory = directory+'/'+ext[11]
 
 for j in range(len(a)):
     newpath = directory
@@ -113,14 +114,16 @@ for i in range(len(a)):
        d.write("10 10\n")
        d.close()
 print('file done')    
-   
+
+recalculationdirectory = recalculationdirectory.replace("\\","/")
+
 f = open("C:\\xCorrel\\%s_step%s_%s.bat" % (ProjectName, stepnumber,'Redo'), "w+") #Change the Name and the directory below
 f.write("echo off\n")
 f.write("title calculation HDIC\n")
 f.write("echo start calcul\n")
 f.write("pause\n")
 for i in range(len(a)):
-    f.write("start /wait XCorrel_V9.11a.exe %s/IMAFile_p%s_%s.ima\n" % (recalculationdirectory,b[i],c[i]))
+    f.write("start /wait XCorrel_V9.11a.exe %s/IMAFile_P%s_%s.ima\n" % (recalculationdirectory,b[i],c[i]))
 print('file done')
 f.write("call XCorrel_Finished_%s.bat" % (ProjectName))
 f.close()   
