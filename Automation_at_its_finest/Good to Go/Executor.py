@@ -8,6 +8,7 @@ Created on Mon Jun 13 16:21:17 2022
 # exec("MakeCroppedFolders_and_MakePostprocessed_Batch.py")
 exec(open("Make_Image_Alignment_Batch_File.py").read())
 exec(open("Align_Images_Batch.py").read())
+exec(open("XCorrel_Batch_File_Generator.py").read())
 # exec(open("Create_AlignedImagesDirectory_Batch.py").read())
 exec(open("Generate_Tiffs_from_Raw_Data_amended_Batch.py").read())
 # exec(open("AddStepNumber_Batch.py").read())
