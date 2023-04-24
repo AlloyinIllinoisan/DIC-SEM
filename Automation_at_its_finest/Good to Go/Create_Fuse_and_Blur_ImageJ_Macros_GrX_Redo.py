@@ -13,7 +13,7 @@ import re
 import smtplib
 import time
 import ssl
-import yagmail
+#import yagmail
 import tkinter as tk
 from tkinter import filedialog
 
