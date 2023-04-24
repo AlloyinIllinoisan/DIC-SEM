@@ -12,7 +12,7 @@ import os
 #from skimage.feature import match_template, register_translation
 import scipy
 import time
-import yagmail
+#import yagmail
 #import glob
 #import scipy.ndimage
 #import scipy.ndimage.interpolation
@@ -74,7 +74,7 @@ newpath = directory + '/AlignedImages_step{}'.format(v)
 # directory = r'C:\Users\repha\Documents\Grad School\Research\Fiddling\r1_0_0'
  
 # giving file extensions
-ext = ('.BlN', '.GrX', '.LRt', '.BlA', '.DpX', '.DpY')
+ext = ('.BlN', '.GrX', '.LRt', '.BlA', '.DpX', '.DpY', '.BlL', '.BlT','.Tws')
  
 # iterating over directory and subdirectory to get desired result
 for root, subdirectories, files in os.walk(newpath):
@@ -261,7 +261,100 @@ for root, subdirectories, files in os.walk(newpath):
 #            X_bottom_right = nColumns - X_top_left
 #            Y_bottom_right = nRows - Y_top_left
 #            crop_img = img.crop((X_top_left, Y_top_left, X_bottom_right, Y_bottom_right))
-#            crop_img.save(name + '_crop' + '.tif')            
+#            crop_img.save(name + '_crop' + '.tif')
+
+for root, subdirectories, files in os.walk(newpath):
+    for file in files:
+        if file.endswith(ext[6]):
+            # ## name is the path of a given file
+            name = os.path.join(root, file) 
+            ## Write Data from file in a array
+            data = np.loadtxt(name)      
+            ## Extract the 3 columns oif the array
+            X = data[:,0]
+            Y = data[:,1]
+            Value = data[:,2]
+            ## Extract the number of points
+            nColumns = int(X[-1])+1
+            nRows = int(Y[-1])+1
+            ## Reshape the array of the Values 
+            Value = Value.reshape((nRows,nColumns))
+            ##apply Max threshold on Value
+            Value[Value >20] = 0
+            Value[Value <0] = 0
+            ## Write a tiff image 
+            img = Image.fromarray(Value)
+            #img.save(name + '.tif')
+            print('Image generated')
+            ## Crop image - enter the croped region dimension
+            X_top_left = int(0)
+            Y_top_left = int(0)
+            X_bottom_right = nColumns - X_top_left
+            Y_bottom_right = nRows - Y_top_left
+            crop_img = img.crop((X_top_left, Y_top_left, X_bottom_right, Y_bottom_right))
+            crop_img.save(name + '_crop' + '.tif')
+    
+for root, subdirectories, files in os.walk(newpath):
+    for file in files:
+        if file.endswith(ext[7]):
+            # ## name is the path of a given file
+            name = os.path.join(root, file)
+            ## Write Data from file in a array
+            data = np.loadtxt(name)      
+            ## Extract the 3 columns oif the array
+            X = data[:,0]
+            Y = data[:,1]
+            Value = data[:,2]
+            ## Extract the number of points
+            nColumns = int(X[-1])+1
+            nRows = int(Y[-1])+1
+            ## Reshape the array of the Values 
+            Value = Value.reshape((nRows,nColumns))
+            ##apply Max threshold on Value
+            Value[Value >20] = 0
+            Value[Value <0] = 0
+            ## Write a tiff image 
+            img = Image.fromarray(Value)
+            #img.save(name + '.tif')
+            print('Image generated')
+            ## Crop image - enter the croped region dimension
+            X_top_left = int(0)
+            Y_top_left = int(0)
+            X_bottom_right = nColumns - X_top_left
+            Y_bottom_right = nRows - Y_top_left
+            crop_img = img.crop((X_top_left, Y_top_left, X_bottom_right, Y_bottom_right))
+            crop_img.save(name + '_crop' + '.tif')
+            
+for root, subdirectories, files in os.walk(newpath):
+    for file in files:
+        if file.endswith(ext[8]):
+            # ## name is the path of a given file
+            name = os.path.join(root, file) 
+            ## Write Data from file in a array
+            data = np.loadtxt(name)      
+            ## Extract the 3 columns oif the array
+            X = data[:,0]
+            Y = data[:,1]
+            Value = data[:,2]
+            ## Extract the number of points
+            nColumns = int(X[-1])+1
+            nRows = int(Y[-1])+1
+            ## Reshape the array of the Values 
+            Value = Value.reshape((nRows,nColumns))
+            ##apply Max threshold on Value
+            Value[Value >20] = 0
+            Value[Value <0] = 0
+            ## Write a tiff image 
+            img = Image.fromarray(Value)
+            #img.save(name + '.tif')
+            print('Image generated')
+            ## Crop image - enter the croped region dimension
+            X_top_left = int(0)
+            Y_top_left = int(0)
+            X_bottom_right = nColumns - X_top_left
+            Y_bottom_right = nRows - Y_top_left
+            crop_img = img.crop((X_top_left, Y_top_left, X_bottom_right, Y_bottom_right))
+            crop_img.save(name + '_crop' + '.tif')
             
 # yag = yagmail.SMTP('{}'.format(WorkStationEmail), '{}'.format(Password))
 
