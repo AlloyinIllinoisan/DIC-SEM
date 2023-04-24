@@ -65,7 +65,7 @@ for j in range(1,n+1):
        # f=  open("C:\\Users\\Pollo\\Desktop\\H-DIC on C\\Patrick CALLAHAN\\Titanium_Project\\Ti7_Insitu_HDIC\\P%s_%s\\Align\\IMAFile_step1to7.ima" % (i,j), "w+")
         f = open(newpath + '/IMAFile_P%s_%s.ima' % (i,j) , "w+")       
         f.write("step0_%s_%s.tif\n" % (i,j))
-        f.write("step3_%s_%s.tif\n" % (i,j)) #Change this number to the current step number
+        f.write("step%s_%s_%s.tif\n" % (v,i,j)) #Change this number to the current step number
         f.write("\n")
        
      
