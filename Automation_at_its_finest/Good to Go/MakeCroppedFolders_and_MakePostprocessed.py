@@ -65,6 +65,7 @@ for i in range(1,n+1):
     blndirectory = '{}/AlignedImages_step{}/BlN'.format(path,i)
     lrtdirectory = '{}/AlignedImages_step{}/LRt'.format(path,i)
     bladirectory = '{}/AlignedImages_step{}/BlA'.format(path,i)
+    twsdirectory = '{}/AlignedImages_step{}/Tws'.format(path,i)
     cropped = '/Cropped'
     newdirectorygrx = '{}/{}'.format(grxdirectory,cropped)
     if not os.path.exists(newdirectorygrx):
@@ -78,17 +79,22 @@ for i in range(1,n+1):
     newdirectorybla = '{}/{}'.format(bladirectory,cropped)
     if not os.path.exists(newdirectorybla):
         os.makedirs(newdirectorybla)
+    newdirectorytws = '{}/{}'.format(twsdirectory,cropped)
+    if not os.path.exists(newdirectorytws):
+        os.makedirs(newdirectorytws)        
         
 for j in range(n,n+1):
     grxdirectory = '{}/AlignedImages_step{}/GrX'.format(path,j)
     blndirectory = '{}/AlignedImages_step{}/BlN'.format(path,j)
     lrtdirectory = '{}/AlignedImages_step{}/LRt'.format(path,j)
     bladirectory = '{}/AlignedImages_step{}/BlA'.format(path,j)
+    twsdirectory = '{}/AlignedImages_step{}/Tws'.format(path,j)
     cropped = '/Cropped'
     newdirectorygrx = '{}/{}'.format(grxdirectory,cropped)
     newdirectorybln = '{}/{}'.format(blndirectory,cropped)
     newdirectorybla = '{}/{}'.format(bladirectory,cropped)
     newdirectorylrt = '{}/{}'.format(lrtdirectory,cropped)
+    newdirectorytws = '{}/{}'.format(twsdirectory,cropped)
     #Read in text file
     data = pd.read_table('{}/AlignedImages_step{}/tif'.format(path,n)+"/TileConfiguration_Preprocessed.registered.txt",sep="\s+",header= None)
 
@@ -207,10 +213,15 @@ for j in range(n,n+1):
     for i in range(len(s)):
         p.append('step{}'.format(j)+str(s[i])+'.LRt_crop.tif;')
         
+    m = []
+    for i in range(len(s)):
+        m.append('step{}'.format(j)+str(s[i])+'.Tws_crop.tif;')
+        
     pp = np.array(p) #LRt
     zz = np.array(z) #GrX
     rr = np.array(r) #BlN
     kk = np.array(k) #BlA
+    mm = np.array(m) #Tws
     
 
     nparray = np.append(cc0r03,pp)
@@ -248,10 +259,18 @@ for j in range(n,n+1):
     newtextfile_BlA = pd.DataFrame([newcol0_BlA,column1,newcol2,newcol3,column4,column5,column6,column7,column8,column9])
     finalproduct_BlA = newtextfile_BlA.T #Transpose Data Frame
     
+    nmarray = np.append(cc0r03,mm)
+    newcol0_Tws = pd.Series(nmarray)
+ 
+    #Concatenate All Columns & Convert to Data Frame
+    newtextfile_Tws = pd.DataFrame([newcol0_Tws,column1,newcol2,newcol3,column4,column5,column6,column7,column8,column9])
+    finalproduct_Tws = newtextfile_Tws.T #Transpose Data Frame    
+    
     finalproduct_GrX.to_csv(newdirectorygrx+'/Postprocessed_GrX_step{}.txt'.format(j), header=None, index=None, sep=' ', mode='w')
     finalproduct_BlN.to_csv(newdirectorybln+'/Postprocessed_BlN_step{}.txt'.format(j), header=None, index=None, sep=' ', mode='w')
     finalproduct_LRt.to_csv(newdirectorylrt+'/Postprocessed_LRt_step{}.txt'.format(j), header=None, index=None, sep=' ', mode='w')
     finalproduct_BlA.to_csv(newdirectorybla+'/Postprocessed_BlA_step{}.txt'.format(j), header=None, index=None, sep=' ', mode='w')
+    finalproduct_Tws.to_csv(newdirectorytws+'/Postprocessed_Tws_step{}.txt'.format(j), header=None, index=None, sep=' ', mode='w')
     finalproduct.to_csv(path+'/AlignedImages_step{}'.format(j)+'/Postprocessed_step{}.txt'.format(j), header=None, index=None, sep=' ', mode='w')
     
 # yag = yagmail.SMTP('{}'.format(WorkStationEmail), '{}'.format(Password))
