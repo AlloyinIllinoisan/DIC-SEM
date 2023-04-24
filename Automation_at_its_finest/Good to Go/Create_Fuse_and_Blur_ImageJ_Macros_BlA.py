@@ -95,7 +95,6 @@ selectWindow("step{}_{}.BlA_crop.tif");'''.format(directory,j,j,z[i],j,z[i])
     L27 = 'run("Image Sequence... ", "select=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/BlA/Cropped/] dir=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/BlA/Cropped] format=TIFF use");'
     L28 = 'run("Image Sequence... ", "select=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/BlA/Cropped/] dir=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/BlA/Cropped] format=TIFF use");'
     L29 = 'run("Grid/Collection stitching", "type=[Positions from file] order=[Defined by TileConfiguration] directory=['+'{}'.format(directory)+'/AlignedImages_step{}'.format(j)+'/BlA/Cropped] layout_file=Postprocessed_BlA_'+'step{}'.format(j)+'.txt fusion_method=[Linear Blending] regression_threshold=0.30 max/avg_displacement_threshold=2.50 absolute_displacement_threshold=3.50 display_fusion computation_parameters=[Save memory (but be slower)] image_output=[Fuse and display]");'
-    L30 = 'run("Gaussian Blur...", "sigma=4");'
     L31 = '//run("Brightness/Contrast...");'
     L32 = 'run("Enhance Contrast", "saturated=0.35");'
     L33 = 'run("Enhance Contrast", "saturated=0.35");'
@@ -114,7 +113,6 @@ selectWindow("step{}_{}.BlA_crop.tif");'''.format(directory,j,j,z[i],j,z[i])
     L2.append(L27)
     L2.append(L28)
     L2.append(L29)
-    L2.append(L30)
     L2.append(L31)
     L2.append(L32)
     L2.append(L33)
