@@ -80,7 +80,7 @@ if not os.path.exists(recalculationcroppeddirectory):
 recalculationdirectory = '{}/Recalculation'.format(directory)
 stepnumber =filestoredo[0][-32:-31]
 # yes = '{}'.format(a[0])
-extt = ('BlN', 'GrX', 'LRt', 'BlA', 'DpX', 'DpY', 'BlL', 'BlT','ima','tif','PAR')
+extt = ('BlN', 'GrX', 'LRt', 'BlA', 'DpX', 'DpY', 'BlL', 'BlT','ima','tif','PAR','Tws')
 grxdirectory = directory+'/'+extt[1]
 blndirectory = directory+'/'+extt[0]
 lrtdirectory = directory+'/'+extt[2]
@@ -91,6 +91,7 @@ blldirectory = directory+'/'+extt[6]
 bltdirectory = directory+'/'+extt[7]
 tifdirectory = directory+'/'+extt[9]
 pardirectory = directory+'/'+extt[10]
+twsdirectory = directory+'/'+extt[11]
 grxcroppeddirectory = grxdirectory + '/Cropped'
 blncroppeddirectory = blndirectory + '/Cropped'
 lrtcroppeddirectory = lrtdirectory + '/Cropped'
@@ -99,13 +100,14 @@ dpxcroppeddirectory = dpxdirectory + '/Cropped'
 dpycroppeddirectory = dpydirectory + '/Cropped'
 bllcroppeddirectory = blldirectory + '/Cropped'
 bltcroppeddirectory = bltdirectory + '/Cropped'
+twscroppeddirectory = twsdirectory + '/Cropped'
 #If LRT exists
 # extdirectories = (blndirectory,grxdirectory,lrtdirectory,bladirectory,dpxdirectory,dpydirectory,blldirectory,bltdirectory)
 # croppeddirectories = (blncroppeddirectory,grxcroppeddirectory,lrtcroppeddirectory,blacroppeddirectory,dpxcroppeddirectory,dpycroppeddirectory,bllcroppeddirectory,bltcroppeddirectory)
 
 #If LRT Does Not Exist
-extdirectories = (blndirectory,grxdirectory,bladirectory,dpxdirectory,dpydirectory,blldirectory,bltdirectory)
-croppeddirectories = (blncroppeddirectory,grxcroppeddirectory,blacroppeddirectory,dpxcroppeddirectory,dpycroppeddirectory,bllcroppeddirectory,bltcroppeddirectory)
+extdirectories = (blndirectory,grxdirectory,bladirectory,dpxdirectory,dpydirectory,blldirectory,bltdirectory,twsdirectory)
+croppeddirectories = (blncroppeddirectory,grxcroppeddirectory,blacroppeddirectory,dpxcroppeddirectory,dpycroppeddirectory,bllcroppeddirectory,bltcroppeddirectory,twscroppeddirectory)
 
 #Matrix for Row
 b = []
@@ -118,7 +120,7 @@ for i in range(len(a)): #Populates above matrices
     e = a[i][2]
     c.append(e)
     
-ext = ('.BlN', '.GrX', '.LRt', '.BlA', '.DpX', '.DpY', '.BlL', '.BlT')
+ext = ('.BlN', '.GrX', '.LRt', '.BlA', '.DpX', '.DpY', '.BlL', '.BlT','.Tws')
  
 # iterating over directory and subdirectory to get desired result
 for root, subdirectories, files in os.walk(recalculationdirectory):
@@ -368,6 +370,37 @@ for root, subdirectories, files in os.walk(recalculationdirectory):
             Y_bottom_right = nRows - Y_top_left
             crop_img = img.crop((X_top_left, Y_top_left, X_bottom_right, Y_bottom_right))
             crop_img.save(name + '_crop' + '.tif')
+            
+for root, subdirectories, files in os.walk(recalculationdirectory):
+    for file in files:
+        if file.endswith(ext[8]):
+            # ## name is the path of a given file
+            name = os.path.join(root, file) 
+            ## Write Data from file in a array
+            data = np.loadtxt(name)      
+            ## Extract the 3 columns oif the array
+            X = data[:,0]
+            Y = data[:,1]
+            Value = data[:,2]
+            ## Extract the number of points
+            nColumns = int(X[-1])+1
+            nRows = int(Y[-1])+1
+            ## Reshape the array of the Values 
+            Value = Value.reshape((nRows,nColumns))
+            ##apply Max threshold on Value
+            Value[Value >20] = 0
+            Value[Value <0] = 0
+            ## Write a tiff image 
+            img = Image.fromarray(Value)
+            #img.save(name + '.tif')
+            print('Image generated')
+            ## Crop image - enter the croped region dimension
+            X_top_left = int(0)
+            Y_top_left = int(0)
+            X_bottom_right = nColumns - X_top_left
+            Y_bottom_right = nRows - Y_top_left
+            crop_img = img.crop((X_top_left, Y_top_left, X_bottom_right, Y_bottom_right))
+            crop_img.save(name + '_crop' + '.tif')
               
 #Cropping the images
 for j in range(len(croppeddirectories)):
@@ -408,6 +441,7 @@ for j in range(len(croppeddirectories)):
 
 exec(open("Create_Fuse_ImageJ_Macros_BlN_Redo.py").read())
 exec(open("Create_Fuse_and_Blur_ImageJ_Macros_GrX_Redo.py").read())
+exec(open("Create_Fuse_ImageJ_Macros_Tws_Redo.py"))
 exec(open("Create_ImageJ_MakeFuse_Redo_Batch_Files.py").read())
 
 root = tk.Tk()
