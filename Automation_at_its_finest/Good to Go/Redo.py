@@ -123,7 +123,7 @@ f.write("title calculation HDIC\n")
 f.write("echo start calcul\n")
 f.write("pause\n")
 for i in range(len(a)):
-    f.write("start /wait XCorrel_V9.11a.exe %s/IMAFile_P%s_%s.ima\n" % (recalculationdirectory,b[i],c[i]))
+    f.write("start /wait XCorrel_V9.20b.exe %s/IMAFile_P%s_%s.ima\n" % (recalculationdirectory,b[i],c[i]))
 print('file done')
 f.write("call XCorrel_Finished_%s.bat" % (ProjectName))
 f.close()   
