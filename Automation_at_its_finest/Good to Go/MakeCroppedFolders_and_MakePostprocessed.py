@@ -20,7 +20,7 @@ import tkinter as tk
 import time
 import smtplib
 import ssl
-import yagmail
+#import yagmail
 
 tic = time.time()
 ScriptName = 'Make Cropped Folders and Post-processed text files'
