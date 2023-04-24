@@ -10,7 +10,7 @@ import pandas as pd
 import tkinter as tk
 import time
 import csv
-import yagmail
+#import yagmail
 
 tic = time.time()
 ScriptName = 'Batch File for ImageJ Fusion Macros'
@@ -83,7 +83,7 @@ AppleConcat.to_csv('{}'.format(BatchFileMacrosDirectory)+'/ImageJ_Fusion_BlA.bat
     
 strawberry = []
 for m in range(n,n+1):
-    L4 = 'START "My Program" /D "'+'{}'.format(PathtoFiji)+'" ImageJ-win64.exe -macro "'+'{}'.format(path)+'/MakeFuseGrX_'+'step{}'.format(m)+'.ijm"\nTIMEOUT /T 75'
+    L4 = 'START "My Program" /D "'+'{}'.format(PathtoFiji)+'" ImageJ-win64.exe -macro "'+'{}'.format(path)+'/MakeFuseGrX3px_'+'step{}'.format(m)+'.ijm"\nTIMEOUT /T 75'
     strawberry.append(L4)
 
 npL4 = np.array(L4)
@@ -96,6 +96,23 @@ JstrawberryDF = pd.DataFrame(Jstrawberry)
 EmptystrawberryDF = pd.DataFrame(emptystrawberry)
 strawberryConcat = pd.concat([Idaho,EmptystrawberryDF])
 strawberryConcat.to_csv('{}'.format(BatchFileMacrosDirectory)+'/ImageJ_Fusion_GrX.bat', index=False, header=False, sep='\t', quoting=csv.QUOTE_NONE, escapechar = '\t')
+
+avocado = []
+for m in range(n,n+1):
+    L7 = 'START "My Program" /D "'+'{}'.format(PathtoFiji)+'" ImageJ-win64.exe -macro "'+'{}'.format(path)+'/MakeFuseGrXNoBlur_'+'step{}'.format(m)+'.ijm"\nTIMEOUT /T 75'
+    strawberry.append(L7)
+
+npL7 = np.array(L7)
+npavocado = np.array(avocado)
+Javocado = pd.Series([npL7])
+emptyavocado = []
+avocadopopulation = pd.Series(npavocado)
+emptyavocado.append(avocadopopulation)
+JavocadoDF = pd.DataFrame(Javocado)
+EmptyavocadoDF = pd.DataFrame(emptyavocado)
+avocadoConcat = pd.concat([Idaho,EmptyavocadoDF])
+avocadoConcat.to_csv('{}'.format(BatchFileMacrosDirectory)+'/ImageJ_Fusion_GrX_NoBlur.bat', index=False, header=False, sep='\t', quoting=csv.QUOTE_NONE, escapechar = '\t')
+
 
 chile = []
 
@@ -130,6 +147,8 @@ JblueberryDF = pd.DataFrame(Jblueberry)
 EmptyblueberryDF = pd.DataFrame(emptyblueberry)
 blueberryConcat = pd.concat([Idaho,EmptyblueberryDF])
 blueberryConcat.to_csv('{}'.format(BatchFileMacrosDirectory)+'/ImageJ_Fusion_LRt.bat', index=False, header=False, sep='\t', quoting=csv.QUOTE_NONE, escapechar = '\t')
+
+
 
 # yag = yagmail.SMTP('{}'.format(WorkStationEmail), '{}'.format(Password))
 
