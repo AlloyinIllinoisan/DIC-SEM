@@ -107,8 +107,8 @@ for i in range(len(a)):
        d = open(recalculationdirectory + '/IMAFile_P%s_%s.PAR' % (b[i],c[i]) , "w+") #Change these to the ima.ima parameters
        d.write("0 0 6143 4095\n") 
        d.write("0 0 0 50 50 50 50\n")
-       d.write("31 31 3 3\n")
-       d.write("3 1.000000 1 3 0 0 0 0\n")
+       d.write("41 41 3 3\n")
+       d.write("3 1.000000 1 7 0 0 0 0\n")
        d.write("1.0 0\n")
        d.write("1 1 0.000000 8 1\n")
        d.write("10 10\n")
