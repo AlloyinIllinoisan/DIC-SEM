@@ -97,6 +97,24 @@ EmptystrawberryDF = pd.DataFrame(emptystrawberry)
 strawberryConcat = pd.concat([Idaho,EmptystrawberryDF])
 strawberryConcat.to_csv('{}'.format(BatchFileMacrosDirectory)+'/ImageJ_Fusion_GrX.bat', index=False, header=False, sep='\t', quoting=csv.QUOTE_NONE, escapechar = '\t')
 
+chile = []
+
+for j in range(n,n+1):
+    L6 = 'START "My Program" /D "'+'{}'.format(PathtoFiji)+'" ImageJ-win64.exe -macro "'+'{}'.format(path)+'/MakeFuseTws_'+'step{}'.format(j)+'.ijm"\nTIMEOUT /T 75'
+    chile.append(L6)
+    
+npL6 = np.array(L6)
+npchile = np.array(chile)
+Jchile = pd.Series([npL6])
+emptychile = []
+chilepopulation = pd.Series(npchile)
+emptychile.append(chilepopulation)
+JchileDF = pd.DataFrame(Jchile)    
+EmptychileDF = pd.DataFrame(emptychile)
+chileConcat = pd.concat([Idaho,EmptychileDF])
+
+chileConcat.to_csv('{}'.format(BatchFileMacrosDirectory)+'/ImageJ_Fusion_Tws.bat', index=False, header=False, sep='\t', quoting=csv.QUOTE_NONE, escapechar = '\t')
+
 blueberry = []
 for p in range(n,n+1):
     L5 = 'START "My Program" /D "'+'{}'.format(PathtoFiji)+'" ImageJ-win64.exe -macro "'+'{}'.format(path)+'/MakeFuseLRt_'+'step{}'.format(p)+'.ijm"\nTIMEOUT /T 75'
