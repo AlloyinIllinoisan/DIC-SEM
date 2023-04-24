@@ -8,5 +8,6 @@ call MakeCroppedFoldersandMakePostprocessed_batch.bat
 call ImageJ_Fusion_BlN.bat
 call ImageJ_Fusion_GrX.bat
 call ImageJ_Fusion_BlA.bat
+call ImageJ_Fusion_Tws.bat
 call ImageJ_Fusion_LRt.bat
 call Finished_Batch.bat
