@@ -95,7 +95,7 @@ emptystrawberry.append(strawberrypopulation)
 JstrawberryDF = pd.DataFrame(Jstrawberry)
 EmptystrawberryDF = pd.DataFrame(emptystrawberry)
 strawberryConcat = pd.concat([Idaho,EmptystrawberryDF])
-strawberryConcat.to_csv('{}'.format(BatchFileMacrosDirectory)+'/ImageJ_Fusion_GrX.bat', index=False, header=False, sep='\t', quoting=csv.QUOTE_NONE, escapechar = '\t')
+strawberryConcat.to_csv('{}'.format(BatchFileMacrosDirectory)+'/ImageJ_Fusion_GrX_3pxGB.bat', index=False, header=False, sep='\t', quoting=csv.QUOTE_NONE, escapechar = '\t')
 
 avocado = []
 for m in range(n,n+1):
