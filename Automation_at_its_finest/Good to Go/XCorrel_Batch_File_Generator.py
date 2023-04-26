@@ -58,5 +58,5 @@ for i in range(1,b+1):
     for j in range(1,n+1):
         f.write("start /wait XCorrel_V9.20b.exe %s\\IMAFile_p%s_%s.ima\n" % (newpath,i,j))
     print('file done')
-f.write("call XCorrel_Finished_%s_Test.bat" % (ProjectName))
+f.write("call XCorrel_Finished_%s.bat" % (ProjectName))
 f.close()
