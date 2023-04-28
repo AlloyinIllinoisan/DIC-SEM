@@ -56,7 +56,7 @@ Once saved, open a random image from the most recent step in ImageJ and select a
 
 Run XCorrel and quit right after. You only need the ima.PAR file to save the parameters.
 
-Open the ima.PAR file in Notepad and then open "Create IMA_PAR files.py". You no longer need to change the value in line 68. Input the values from ima.PAR into the labelled section (lines 75-81), and change anything else that indicates it should be changed. Run this once all necessary changes have been made.
+Open the ima.PAR file in Notepad and then open "Create IMA_PAR files.py". You no longer need to change the value in line 68. Input the values from ima.PAR into the labelled section (lines 75-81), and change anything else that indicates it should be changed. Run this script TWICE after all necessary changes have been made.
 
 After making the .PAR and .ima files, close Spyder. You will get an error when running Double_Click_Me.bat otherwise.
 
