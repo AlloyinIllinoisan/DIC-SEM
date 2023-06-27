@@ -50,7 +50,7 @@ After you are satisfied with the Pilot.txt file, you may continue to the next st
 
 _Note: # means an arbitrary number that is the step number_
 
-Now, place both the step0 and step# folders, with images, in your Main Directory. Then go to the "Good to Go" folder and click "Executor.bat". This will add the step number to all of the step# folder images, create the Aligned Images Directory, create the necessary batch files in the Batch Files directory, and create the necessary ImageJ Macros.
+Now, place both the step0 and step# folders, with images, in your Main Directory. Then go to the "Good to Go" folder and click the "Executor_(INITIALS).bat" that corresponds to your initials. This will add the step number to all of the step# folder images, create the Aligned Images Directory, create the necessary batch files in the Batch Files directory, and create the necessary ImageJ Macros.
 
 Next, go into the "Batch Files" directory and double-click "Image Alignment.bat". Once the image alignment has completed, you need to check that you have the correct number of images in the Aligned Images Directory - there should be the sum of the step0 and step# images. If there are not enough images, run the "Image Alignment.bat" again. If some images have regions that are too cropped, rerun those by hand using the Template Matching tool in ImageJ.
 
