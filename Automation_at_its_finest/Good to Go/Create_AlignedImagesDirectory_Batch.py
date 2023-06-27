@@ -52,6 +52,7 @@ TileOverlap = lines[11][14:-1] #Percentage of overlap between tiles
 PythonScriptsDirectory = lines[12][26:-1] #Python Scripts Directory (Good to Go)
 PythonScriptsDirectory = PythonScriptsDirectory.replace("\\","/")
 xCorrelDirectory = lines[13][17:-1] #Path to xCorrel
+PythonDirectory = lines[14][16:-1] #Path to Python
 # Folder Path
 path = MainDirectory
 
@@ -62,9 +63,9 @@ n = int(n)
 lemon = []
 
 
-L2 = '''call C:\\ProgramData\\Anaconda3\\condabin\\activate.bat
+L2 = '''call {}
 cd "{}"
-python Create_AlignedImagesDirectory.py'''.format(PythonScriptsDirectory)
+python Create_AlignedImagesDirectory.py'''.format(PythonDirectory,PythonScriptsDirectory)
 lemon.append(L2)
     
 npL1 = np.array(L1)
