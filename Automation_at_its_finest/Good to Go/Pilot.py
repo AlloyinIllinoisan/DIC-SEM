@@ -33,6 +33,7 @@ TileOverlap = lines[11][14:-1] #Percentage of overlap between tiles
 PythonScriptsDirectory = lines[12][26:-1] #Python Scripts Directory (Good to Go)
 PythonScriptsDirectory = PythonScriptsDirectory.replace("\\","/")
 xCorrelDirectory = lines[13][17:-1] #Path to xCorrel
+PythonDirectory = lines[14][16:-1] #Path to Python
 
 
 # yag = yagmail.SMTP('{}'.format(WorkStationEmail), '{}'.format(Password))
