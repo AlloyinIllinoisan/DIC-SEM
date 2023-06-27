@@ -5,6 +5,8 @@ Go to the <>Code button and download the zip folder.
 
 Once both have been downloaded, please place in a location not in the directory you are running the DIC calculations on.
 
+You will also need to have a version of Anaconda downloaded in your C:/Users/(insert name) folder inside a folder that you name "Anaconda".
+
 Go into the "Good to Go" folder and edit the "Pilot.txt" file to assign the:
 _________________________________________________________________________________________________________________________________________________________________
 Main Directory: Where the main folder is that will house all of the data for your DIC project.
@@ -34,6 +36,8 @@ Tile Overlap: This is the percent overlap between images. This is for the ImageJ
 Python Scripts Directory: The directory that the Pilot.txt and Python scripts are in.
 
 xCorrel Directory: The path to xCorrel.
+
+Python Directory: The path to your Anaconda installation.
 
 END (DO NOT DELETE THIS)
 _________________________________________________________________________________________________________________________________________________________________
