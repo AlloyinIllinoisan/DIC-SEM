@@ -57,9 +57,9 @@ path = MainDirectory
 lemon = []
 
 
-L2 = '''E:
+L2 = '''F:
 cd "{}"
-call XCorrel_Finished.bat
+call Double_Click_Me.bat
 '''.format(BatchFileMacrosDirectory)
 lemon.append(L2)
     
