@@ -44,6 +44,8 @@ ________________________________________________________________________________
 
 CAUTION!!! THE PILOT TEXT FILE IS SPECIFIC DOWN TO THE SPACE, SO REPLACE THE NUMBER, ADDRESS, ETC. WITHOUT ADDING OR REMOVING SPACES.
 
+!!!!!PLEASE MAKE SURE YAGMAIL IS INSTALLED ON YOUR VERSION OF ANACONDA!!!!!
+
 Once "Pilot.txt" has been edited, you may run it in the "Pilot.py" script to make sure that everything is displayed correctly. This is important, because all of the subsequent scripts read from this text file for certain inputs.
 
 After you are satisfied with the Pilot.txt file, you may continue to the next step. If something is not displaying correctly in the "Pilot.py" variable explorer, you must change it and then enter every single Python script in the "Good to Go" folder in order to make sure no mistakes occur.
