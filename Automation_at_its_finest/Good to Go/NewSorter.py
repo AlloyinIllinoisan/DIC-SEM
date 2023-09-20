@@ -9,7 +9,7 @@ import os
 import shutil
 import smtplib
 import ssl
-import yagmail
+# import yagmail
 import time
 # Write the name of the directory here,
 # that needs to get sorted
