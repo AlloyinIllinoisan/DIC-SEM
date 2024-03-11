@@ -5,7 +5,7 @@ Batch Files Directory: E:\2023_AMITEX_718_3D\Automation_at_its_finest\Batch File
 Path to Fiji: C:\Program Files (x86)\Fiji.app
 Your Email: name@illinois.edu
 GPU Workstation Email: marshawnthegpuworkstation@gmail.com
-Password: yxuthfglzighgsvn
+Password: Ask Rephayah for this
 Project Name: Project
 Grid Cols: 5
 Grid Rows: 8
